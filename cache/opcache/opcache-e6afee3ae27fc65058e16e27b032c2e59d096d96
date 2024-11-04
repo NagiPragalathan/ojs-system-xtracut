@@ -1,0 +1,37 @@
+<?php $exp = 1761800744; $val = array (
+  'domain' => NULL,
+  'plural-forms' => 'nplurals=1; plural=0;',
+  'messages' => 
+  array (
+    '' => 
+    array (
+      'user.authorization.journalDoesNotPublish' => 'วารสารนี้ไม่ได้เผยแพร่เนื้อหาทางออนไลน์',
+      'context.current' => 'วารสารปัจจุบัน:',
+      'context.select' => 'สลับไปยัง another journal:',
+      'navigation.categories' => 'ประเภท',
+      'navigation.categories.browse' => 'เรียกดู',
+      'common.software' => 'ระบบวารสารแบบเปิด',
+      'common.payments' => 'การชําระเงิน',
+      'navigation.journalHelp' => 'ความช่วยเหลือวารสาร',
+      'reviewer.article.enterReviewForm' => 'คลิกที่ไอคอนเพื่อกรอกแบบฟอร์มรีวิว',
+      'reviewer.submission.reviewFormResponse.form.responseRequired' => 'กรุณากรอกข้อมูลในช่องที่จําเป็น',
+      'common.confirmComplete' => 'คุณแน่ใจหรือว่าต้องการทําเครื่องหมายงานนี้เสร็จสมบูรณ์? คุณอาจไม่สามารถทําการเปลี่ยนแปลงได้ในภายหลัง',
+      'common.payment' => 'การชําระเงิน',
+      'common.homePageHeader.altText' => 'ส่วนหัวของหน้าแรก',
+      'common.journalHomepageImage.altText' => 'รูปภาพหน้าแรกของวารสาร',
+      'doi.manager.settings.publications' => 'บทความ',
+      'navigation.current' => 'ปัจจุบัน',
+      'navigation.otherJournals' => 'วารสารอื่นๆ',
+      'navigation.browseByIssue' => 'ตามฉบับ',
+      'navigation.browseByAuthor' => 'โดยผู้เขียน',
+      'navigation.infoForAuthors' => 'สําหรับนักเขียน',
+      'navigation.infoForLibrarians' => 'สําหรับบรรณารักษ์',
+      'navigation.competingInterestGuidelines' => 'แนวทางผลประโยชน์ที่แข่งขันกัน',
+      'navigation.infoForAuthors.long' => 'ข้อมูลสําหรับผู้เขียน',
+      'navigation.infoForLibrarians.long' => 'ข้อมูลสําหรับบรรณารักษ์',
+      'navigation.skip.about' => 'ข้ามไปที่เกี่ยวกับวารสาร',
+      'navigation.skip.issue' => 'ข้ามไปยังปัญหาปัจจุบัน',
+      'common.queue.long.submissionsUnassigned' => 'ไม่ได้รับมอบหมาย',
+    ),
+  ),
+);

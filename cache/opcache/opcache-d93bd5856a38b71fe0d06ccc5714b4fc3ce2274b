@@ -1,0 +1,78 @@
+<?php $exp = 1761800737; $val = array (
+  'domain' => NULL,
+  'plural-forms' => 'nplurals=2; plural=n != 1;',
+  'messages' => 
+  array (
+    '' => 
+    array (
+      'emails.passwordResetConfirm.subject' => 'Bestätigung der Passwortzurücksetzung',
+      'emails.userRegister.subject' => 'Registrierung bei der Zeitschrift',
+      'emails.userValidateSite.subject' => 'Account validieren',
+      'emails.reviewerRegister.subject' => 'Registrierung als Benutzer/in bei {$contextName}',
+      'emails.issuePublishNotify.subject' => 'Gerade veröffentlicht: {$issueIdentification} von {$contextName}',
+      'emails.editorAssign.subject' => 'Sie wurden als Redakteur/in von einer Einreichung bei {$contextName} zugewiesen',
+      'emails.reviewRequest.subject' => 'Einladung zur Begutachtung',
+      'emails.reviewResponseOverdueAuto.subject' => 'Können Sie den Beitrag für uns begutachten?',
+      'emails.reviewRequestSubsequent.subject' => 'Anfrage zur Begutachtung einer überarbeiteten Einreichung',
+      'emails.reviewReinstate.subject' => 'Können Sie weiterhin einen Beitrag für {$contextName} begutachten?',
+      'emails.reviewDecline.subject' => 'Nicht in der Lage zu begutachten',
+      'emails.reviewCancel.subject' => 'Anfrage zur Begutachtung zurückgezogen',
+      'emails.reviewRemind.subject' => 'Eine Erinnerung, Ihr Gutachten bitte abzuschließen',
+      'emails.reviewRemindAuto.subject' => 'Eine Erinnerung, Ihr Gutachten bitte abzuschließen',
+      'emails.editorDecisionAccept.subject' => 'Ihre Einreichung wurde bei {$contextName} angenommen',
+      'emails.editorDecisionSkipReview.subject' => 'Ihre Einreichung wurde in das Lektorat geschickt',
+      'emails.layoutRequest.subject' => 'Die Einreichung {$submissionId} ist bereit für die Produktion bei {$contextAcronym}',
+      'emails.layoutComplete.subject' => 'Fahnen vollständig',
+      'emails.emailLink.subject' => 'Möglicherweise interessanter Artikel',
+      'emails.subscriptionNotify.subject' => 'Benachrichtigung zu einem Abonnement',
+      'emails.subscriptionAfterExpiry.subject' => 'Abonnement abgelaufen',
+      'emails.subscriptionPurchaseIndl.subject' => 'Abonnementkauf: Individuell',
+      'emails.subscriptionPurchaseInstl.subject' => 'Abonnementkauf: Institutionell',
+      'emails.subscriptionRenewIndl.subject' => 'Abonnementerneuerung: Individuell',
+      'emails.subscriptionRenewInstl.subject' => 'Abonnementerneuerung: Institutionell',
+      'emails.revisedVersionNotify.subject' => 'Überarbeitete Version hochgeladen',
+      'emails.statisticsReportNotification.subject' => 'Redaktionelle Aktivitäten für {$month}, {$year}',
+      'emails.announcement.subject' => '{$announcementTitle}',
+      'emails.paymentRequestNotification.subject' => 'Benachrichtigung über eine Zahlungsanforderung',
+      'emails.paymentRequestNotification.footer' => '<br><br>—<br>Dies ist eine automatisierte Nachricht von <a href="{$contextUrl}">{$contextName}</a>.',
+      'emails.userValidateContext.subject' => 'Account validieren',
+      'emails.emailLink.description' => 'Diese E-Mail-Vorlage bietet registrierten Leser/innen die Möglichkeit, Informationen über einen Artikel an eine interessierte Person zu senden. Sie ist über die Reading Tools verfügbar und muss von dem/der Zeitschriftenmanager/in auf der Verwaltungsseite der Reading Tools aktiviert werden.',
+      'emails.subscriptionBeforeExpiry.subject' => 'Benachrichtigung über das Ablaufen eines Abonnements',
+      'emails.subscriptionAfterExpiryLast.subject' => 'Abonnement abgelaufen - Letzte Erinnerung',
+      'emails.passwordResetConfirm.body' => 'Wir wurden aufgefordert, Ihr Passwort für die Webseite {$siteTitle} neu zu setzen.<br />
+<br />
+Falls die Aufforderung nicht von Ihnen stammt, ignorieren Sie bitte diese E-Mail und Ihr Passwort bleibt unverändert. Falls Sie Ihr Passwort neu setzen möchten, klicken Sie bitte auf die folgende URL:<br />
+<br />
+Mein Passwort neu setzen: {$passwordResetUrl}<br />
+<br />
+{$siteContactName}',
+      'emails.userRegister.body' => '{$recipientName}<br />
+<br />
+Sie sind nun als neue/r Benutzer/in von {$contextName} registriert. Wir haben Ihren Benutzer/innennamen und Ihr Passwort in dieser Mail aufgeführt, beides wird für alle Arbeiten mit dieser Zeitschrift gebraucht. Sie können sich zu jedem Zeitpunkt als Benutzer/in der Zeitschrift austragen lassen, indem Sie mich kontaktieren.<br />
+<br />
+Benutzer/innenname: {$recipientUsername}<br />
+Passwort: {$password}<br />
+<br />
+Vielen Dank <br />
+{$signature}',
+      'emails.issuePublishNotify.body' => '<p>Guten Tag {$recipientName},</p><p> wir freuen uns Ihnen mitteilen zu können, dass eine neue Ausgabe von {$contextName} veröffentlicht wurde: <a href="{$issueUrl}">{$issueIdentification}</a>. Wir laden Sie dazu ein, die Ausgabe zu lesen und mit Anderen Ihrer wissenschaftlichen Community zu teilen.</p><p>Vielen Dank an unsere Autor/innen, Gutachter/innen und Redakteur/innen für ihre wertvollen Beiträge - und natürlich an unsere Leser/innen für das anhaltende Interesse an unserer Arbeit.</p><p>Vielen Dank</p>{$signature}',
+      'emails.reviewerRegister.body' => '<p>Guten Tag {$recipientName}, </p><p>angesichts Ihrer Expertise haben wir uns erlaubt, Ihren Namen der Gutachter/innendatenbank von {$contextName} hinzuzufügen. Dies verpflichtet Sie zu nichts, ermöglicht uns aber, Sie um mögliche Gutachten für eine Einreichung zu bitten. Wenn Sie zu einem Gutachten eingeladen werden, werden Sie Titel und Abstract des Beitrags sehen können und werden stets selber entscheiden können, ob Sie der Einladung folgen oder nicht. Sie können zu jedem Zeitpunkt Ihren Namen von der Gutachter/innenliste entfernen lassen.</p><p>Wir senden Ihnen einen Benutzer/innennamen und ein Passwort, die Sie in allen Schritten der Zusammenarbeit mit der Zeitschrift über deren Website benötigen. Vielleicht möchten Sie z.B. Ihr Profil inkl. Ihrer Begutachtungsinteressen aktualisieren.</p><p>Benutzer/innenname: {$recipientUsername}<br />Passwort: {$password}</p><p>Vielen Dank</p>{$signature}',
+      'emails.userValidateContext.body' => '{$recipientName}<br />
+<br />
+Sie haben ein Benutzer/innenkonto bei {$contextName} angelegt, aber bevor Sie es benutzen können, müssen Sie Ihre E-Mail-Adresse bestätigen. Dazu folgen Sie bitte einfach dem folgenden Link:<br />
+<br />
+{$activateUrl}<br />
+<br />
+Vielen Dank<br />
+{$contextSignature}',
+      'emails.userValidateSite.body' => '{$recipientName}<br />
+<br />
+Sie haben ein Benutzer/innenkonto bei {$siteTitle} angelegt, aber bevor Sie es benutzen können, müssen Sie Ihre E-Mail-Adresse bestätigen. Dazu folgen Sie bitte einfach dem folgenden Link:<br />
+<br />
+{$activateUrl}<br />
+<br />
+Vielen Dank<br />
+{$siteSignature}',
+    ),
+  ),
+);

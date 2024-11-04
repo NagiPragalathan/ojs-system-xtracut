@@ -1,0 +1,27 @@
+<?php $exp = 1761800744; $val = array (
+  'domain' => NULL,
+  'plural-forms' => 'nplurals=1; plural=0;',
+  'messages' => 
+  array (
+    '' => 
+    array (
+      'submission.submit.userGroup' => 'ส่งในบทบาทของฉันในฐานะ...',
+      'submission.upload.selectComponent' => 'เลือกส่วนประกอบบทความ',
+      'submission.submit.whatNext.description' => 'ได้รับแจ้งเกี่ยวกับการส่งของคุณ และคุณได้รับอีเมลยืนยันสําหรับบันทึกของคุณ  เมื่อบรรณาธิการตรวจสอบการส่งแล้ว พวกเขาจะติดต่อคุณ',
+      'submission.title' => 'ชื่อบทความ',
+      'submission.submit.newSubmissionMultiple' => 'เริ่มการส่งใหม่ใน',
+      'submission.submit.newSubmissionSingle' => 'การส่งใหม่',
+      'grid.action.workflow' => 'เวิร์กโฟลว์การส่ง',
+      'submission.abstract.wordCount.description' => 'บทคัดย่อต้องเป็น {$wordCount} คําหรือน้อยกว่า',
+      'submission.submit.noContext' => 'ไม่พบวารสารของการส่งนี้',
+      'submission.issueEntry' => 'ข้อมูลเมตา',
+      'grid.action.galleyInIssueEntry' => 'Galley ปรากฏในรายการปัญหา',
+      'grid.action.issueEntry' => 'ดูข้อมูลเมตาของการส่งนี้',
+      'submission.event.articleGalleyMadeAvailable' => 'The article galley "{$galleyFormatName}" มีให้บริการแล้ว',
+      'submission.event.articleGalleyMadeUnavailable' => 'The article galley "{$galleyFormatName}" ไม่พร้อมใช้งาน',
+      'submission.event.publicIdentifiers' => 'อัปเดตตัว public identifiers ของการส่ง',
+      'grid.issueEntry.availableGalley.title' => 'การอนุมัติรูปแบบ',
+      'submission.title.tip' => 'ประเภทการส่งมักจะเป็นหนึ่งใน \'รูปภาพ\' \'ข้อความ\' หรือประเภทมัลติมีเดียอื่นๆ รวมถึง \'ซอฟต์แวร์\' หรือ \'โต้ตอบ\'  โปรดเลือกสิ่งที่เกี่ยวข้องมากที่สุดสําหรับการส่งของคุณ  ตัวอย่างสามารถดูได้ที่ <a target="_blank" href="http://dublincore.org/documents/2001/04/12/usageguide/generic.shtml#type">http://dublincore.org/documents/2001/04/12/usageguide/generic.shtml#type</a>',
+    ),
+  ),
+);
