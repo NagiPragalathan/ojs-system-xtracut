@@ -35,13 +35,22 @@
 
 	{* List issues *}
 	{else}
-		<ul class="issues_archive">
-			{foreach from=$issues item="issue"}
-				<li>
-					{include file="frontend/objects/issue_summary.tpl"}
-				</li>
-			{/foreach}
-		</ul>
+		{foreach from=$issuesByYear key="year" item="issues"}
+			<h2 class="issue-year">{$year}</h2>
+			<ul class="issues_archive">
+				{foreach from=$issues item="issue" name="issueLoop"}
+					{if $smarty.foreach.issueLoop.last}
+						<li class="issue-item" style="border-bottom: none;">
+							{include file="frontend/objects/issue_summary.tpl" issue=$issue}
+						</li>
+					{else}
+						<li class="issue-item">
+							{include file="frontend/objects/issue_summary.tpl" issue=$issue}
+						</li>
+					{/if}
+				{/foreach}
+			</ul>
+		{/foreach}
 
 		{* Pagination *}
 		{if $prevPage > 1}

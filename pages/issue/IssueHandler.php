@@ -167,6 +167,16 @@ class IssueHandler extends Handler
         $issues = $collector->getMany()->toArray();
         $total = $collector->getCount();
 
+        $issuesByYear = [];
+        foreach ($issues as $issue) {
+            $year = (int) $issue->getYear();
+            if (!isset($issuesByYear[$year])) {
+                $issuesByYear[$year] = [];
+            }
+            $issuesByYear[$year][] = $issue;
+        }
+        krsort($issuesByYear);
+
         $showingStart = $offset + 1;
         $showingEnd = min($offset + $count, $offset + count($issues));
         $nextPage = $total > $showingEnd ? $page + 1 : null;
@@ -179,6 +189,7 @@ class IssueHandler extends Handler
             'total' => $total,
             'nextPage' => $nextPage,
             'prevPage' => $prevPage,
+            'issuesByYear' => $issuesByYear,
         ]);
 
         $templateMgr->display('frontend/pages/issueArchive.tpl');
