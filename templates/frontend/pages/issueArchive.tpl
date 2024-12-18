@@ -23,6 +23,74 @@
 {/capture}
 {include file="frontend/components/header.tpl" pageTitleTranslated=$pageTitle}
 
+<style>
+#search-container {
+    margin: 20px 0;
+    padding: 15px;
+    background-color: #f5f5f5;
+    border-radius: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+}
+
+#search-input {
+    flex: 1;
+    min-width: 200px;
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+#search-button {
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.2s;
+}
+
+#search-button:hover {
+    background-color: #0056b3;
+}
+
+#search-year,
+#search-volume {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    min-width: 100px;
+}
+
+#search-year:focus,
+#search-volume:focus,
+#search-input:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 2px rgba(0,123,255,0.25);
+}
+
+@media (max-width: 768px) {
+    #search-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    #search-input,
+    #search-button,
+    #search-year,
+    #search-volume {
+        width: 100%;
+    }
+}
+</style>
+
 <div class="page page_issue_archive">
 	{include file="frontend/components/breadcrumbs.tpl" currentTitle=$pageTitle}
 	<h1>
@@ -35,6 +103,20 @@
 
 	{* List issues *}
 	{else}
+		<div id="search-container">
+			<input type="text" id="search-input" placeholder="Search by title, volume, number, or year">
+			<button id="search-button">Search</button>
+			<select id="search-year">
+				{foreach from=$issuesByYear key="year" item="issues"}
+					<option value="{$year}">{$year}</option>
+				{/foreach}
+			</select>
+			<select id="search-volume">
+				{foreach from=$volumes item="volume"}
+					<option value="{$volume}">{$volume}</option>
+				{/foreach}
+			</select>
+		</div>
 		{foreach from=$issuesByYear key="year" item="issues"}
 			<h2 class="issue-year">{$year}</h2>
 			<ul class="issues_archive">
@@ -71,5 +153,71 @@
 		}
 	{/if}
 </div>
+
+<script>
+	document.addEventListener('DOMContentLoaded', function() {
+		const searchInput = document.getElementById('search-input');
+		const searchButton = document.getElementById('search-button');
+		const yearSelect = document.getElementById('search-year');
+		const volumeSelect = document.getElementById('search-volume');
+		const issueItems = document.querySelectorAll('.issue-item');
+		const issueYears = document.querySelectorAll('.issue-year');
+	
+		// Search functionality
+		function performSearch() {
+			const searchTerm = searchInput.value.toLowerCase();
+			const selectedYear = yearSelect.value;
+			const selectedVolume = volumeSelect.value;
+	
+			// Hide all year headers initially
+			issueYears.forEach(yearHeader => {
+				yearHeader.style.display = 'none';
+			});
+	
+			issueItems.forEach(item => {
+				const title = item.querySelector('.title').textContent.toLowerCase();
+				const year = item.closest('ul').previousElementSibling.textContent;
+				const volumeInfo = item.querySelector('.volume')?.textContent.toLowerCase() || '';
+				
+				const matchesSearch = !searchTerm || title.includes(searchTerm) || volumeInfo.includes(searchTerm);
+				const matchesYear = selectedYear === '' || year === selectedYear;
+				const matchesVolume = selectedVolume === '' || volumeInfo.includes(selectedVolume.toLowerCase());
+	
+				if (matchesSearch && matchesYear && matchesVolume) {
+					item.style.display = 'block';
+					// Show the corresponding year header
+					item.closest('ul').previousElementSibling.style.display = 'block';
+				} else {
+					item.style.display = 'none';
+				}
+			});
+		}
+	
+		// Event listeners
+		searchButton.addEventListener('click', performSearch);
+		searchInput.addEventListener('keyup', function(event) {
+			if (event.key === 'Enter') {
+				performSearch();
+			}
+		});
+	
+		// Filter by year and volume
+		yearSelect.addEventListener('change', performSearch);
+		volumeSelect.addEventListener('change', performSearch);
+	
+		// Add empty option to selects
+		function addEmptyOption(selectElement) {
+			const emptyOption = document.createElement('option');
+			emptyOption.value = '';
+			emptyOption.textContent = 'All';
+			selectElement.insertBefore(emptyOption, selectElement.firstChild);
+			selectElement.value = '';
+		}
+	
+		addEmptyOption(yearSelect);
+		addEmptyOption(volumeSelect);
+	});
+</script>
+
 
 {include file="frontend/components/footer.tpl"}

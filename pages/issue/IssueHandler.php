@@ -175,7 +175,16 @@ class IssueHandler extends Handler
             }
             $issuesByYear[$year][] = $issue;
         }
+
         krsort($issuesByYear);
+
+        $volumes = [];
+        foreach ($issues as $issue) {
+            $volume = (int) $issue->getVolume();
+            if (!in_array($volume, $volumes)) {
+                $volumes[] = $volume;
+            }
+        }
 
         $showingStart = $offset + 1;
         $showingEnd = min($offset + $count, $offset + count($issues));
@@ -183,6 +192,7 @@ class IssueHandler extends Handler
         $prevPage = $showingStart > 1 ? $page - 1 : null;
 
         $templateMgr->assign([
+            'volumes' => $volumes,
             'issues' => $issues,
             'showingStart' => $showingStart,
             'showingEnd' => $showingEnd,

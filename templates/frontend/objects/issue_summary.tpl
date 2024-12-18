@@ -32,8 +32,8 @@
 			{/if}
 		</a>
 		{if $issueTitle && $issueSeries}
-			<div class="series">
-				{$issueSeries|escape}
+			<div class="series volume-info">
+				<span class="volume">{$issueSeries|escape}</span>
 			</div>
 		{/if}
 	</h2>
